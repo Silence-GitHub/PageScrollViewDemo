@@ -24,6 +24,8 @@ class PageScrollView: UIScrollView, UIScrollViewDelegate {
     private func setupView() {
         clipsToBounds = false
         isPagingEnabled = true
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
