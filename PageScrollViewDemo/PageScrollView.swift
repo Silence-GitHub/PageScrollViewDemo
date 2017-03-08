@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageScrollView: UIScrollView, UIScrollViewDelegate {
+class PageScrollView: UIScrollView {
     
     var interactionAreaNotInBounds: [CGRect] = [] // Use bounds coordinate system
     var interactionAreaNotInBoundsForOC: [NSValue] = [] { // For Objective-C
@@ -19,18 +19,14 @@ class PageScrollView: UIScrollView, UIScrollViewDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupView() {
         clipsToBounds = false
         isPagingEnabled = true
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
