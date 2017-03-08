@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PageScrollVC.swift
 //  PageScrollViewDemo
 //
 //  Created by Kaibo Lu on 2017/3/7.
@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PageScrollVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        automaticallyAdjustsScrollViewInsets = false
+        view.backgroundColor = .white
         
         let scrollView = PageScrollView(frame: CGRect(x: 125, y: 74, width: view.bounds.width - 250, height: 100))
         scrollView.layer.borderWidth = 1
