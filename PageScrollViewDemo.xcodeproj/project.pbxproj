@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					4AB43C911E6E9AEA00FAA3CB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9LJHCTN42A;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -264,7 +265,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LJHCTN42A;
 				INFOPLIST_FILE = PageScrollViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kaibo.PageScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,7 +279,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LJHCTN42A;
 				INFOPLIST_FILE = PageScrollViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kaibo.PageScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -303,6 +308,7 @@
 				4AB43CA61E6E9AEA00FAA3CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

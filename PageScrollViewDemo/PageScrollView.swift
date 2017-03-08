@@ -11,6 +11,11 @@ import UIKit
 class PageScrollView: UIScrollView, UIScrollViewDelegate {
     
     var interactionAreaNotInBounds: [CGRect] = [] // Use bounds coordinate system
+    var interactionAreaNotInBoundsForOC: [NSValue] = [] { // For Objective-C
+        willSet {
+            interactionAreaNotInBounds = newValue.map { $0.cgRectValue }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
