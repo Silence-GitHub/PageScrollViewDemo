@@ -8,10 +8,11 @@
 
 import UIKit
 
-class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     private var selectedIndex: Int = 0
     private let cellWidth: CGFloat = UIScreen.main.bounds.width - 100
+    private let cellHeight: CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +20,10 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = .white
         
-        let cellHeight: CGFloat = 100
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
-        flowLayout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         let frame = CGRect(x: 0, y: 74, width: UIScreen.main.bounds.width, height: cellHeight)
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .clear
@@ -41,7 +40,7 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 3 + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,10 +50,23 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
             cell.contentView.backgroundColor = .red
         case 1:
             cell.contentView.backgroundColor = .green
-        default:
+        case 2:
             cell.contentView.backgroundColor = .blue
+        default:
+            cell.contentView.backgroundColor = .clear
         }
         return cell
+    }
+    
+    // MARK: - Collection view flow layout delegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.item {
+        case 3:
+            return CGSize(width: UIScreen.main.bounds.width - cellWidth, height: cellHeight)
+        default:
+            return CGSize(width: cellWidth, height: cellHeight)
+        }
     }
     
     // MARK: - Scroll view delegate

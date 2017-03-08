@@ -60,17 +60,33 @@
 		4AB43C941E6E9AEA00FAA3CB /* PageScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4AFDF5CB1E702C49004979D9 /* Controller */,
+				4AFDF5CA1E702C3B004979D9 /* View */,
 				4AB43C951E6E9AEA00FAA3CB /* AppDelegate.swift */,
-				4AFDF5C61E7024E3004979D9 /* TableViewController.swift */,
-				4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */,
-				4AB43C971E6E9AEA00FAA3CB /* PageScrollVC.swift */,
-				4AB43CA71E6E9B5900FAA3CB /* PageScrollView.swift */,
-				4AB43C991E6E9AEA00FAA3CB /* Main.storyboard */,
 				4AB43C9C1E6E9AEA00FAA3CB /* Assets.xcassets */,
+				4AB43C991E6E9AEA00FAA3CB /* Main.storyboard */,
 				4AB43C9E1E6E9AEA00FAA3CB /* LaunchScreen.storyboard */,
 				4AB43CA11E6E9AEA00FAA3CB /* Info.plist */,
 			);
 			path = PageScrollViewDemo;
+			sourceTree = "<group>";
+		};
+		4AFDF5CA1E702C3B004979D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AB43CA71E6E9B5900FAA3CB /* PageScrollView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4AFDF5CB1E702C49004979D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4AFDF5C61E7024E3004979D9 /* TableViewController.swift */,
+				4AB43C971E6E9AEA00FAA3CB /* PageScrollVC.swift */,
+				4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
