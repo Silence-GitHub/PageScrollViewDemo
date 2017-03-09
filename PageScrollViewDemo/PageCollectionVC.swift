@@ -26,8 +26,8 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
         flowLayout.minimumLineSpacing = 0
         let frame = CGRect(x: 0, y: 74, width: UIScreen.main.bounds.width, height: cellHeight)
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = .clear
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
