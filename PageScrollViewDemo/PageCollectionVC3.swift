@@ -42,7 +42,14 @@ class PageCollectionVC3: UIViewController, UICollectionViewDataSource, UICollect
         scrollView.delegate = self
         let n = Int(UIScreen.main.bounds.width / cellWidth) - 1
         scrollView.contentSize = CGSize(width: cellWidth * CGFloat(numberOfItems - n), height: cellHeight)
+        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scrollViewTapped(_:))))
         view.addSubview(scrollView)
+    }
+    
+    @objc private func scrollViewTapped(_ tap: UITapGestureRecognizer) {
+        let x = tap.location(in: tap.view).x
+        let index = Int(x / cellWidth)
+        collectionView(collectionView, didSelectItemAt: IndexPath(item: index, section: 0))
     }
 
     // MARK: - Collection view data source
@@ -70,6 +77,12 @@ class PageCollectionVC3: UIViewController, UICollectionViewDataSource, UICollect
             cell.contentView.backgroundColor = .blue
         }
         return cell
+    }
+    
+    // MARK: - Collection view delegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(#function, "Index path:", indexPath)
     }
     
     // MARK: - Scroll view delegate
