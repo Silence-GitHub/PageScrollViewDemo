@@ -15,8 +15,9 @@ class PageScrollVC: UIViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = .white
+        view.clipsToBounds = true
         
-        let scrollView = PageScrollView(frame: CGRect(x: 125, y: 74, width: view.bounds.width - 250, height: 100))
+        let scrollView = PageScrollView(frame: CGRect(x: 50, y: 74, width: view.bounds.width - 100, height: 100))
         scrollView.layer.borderWidth = 1
         scrollView.layer.borderColor = UIColor.black.cgColor
         let width = scrollView.bounds.width

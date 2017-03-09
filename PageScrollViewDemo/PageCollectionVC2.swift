@@ -1,22 +1,21 @@
 //
-//  PageCollectionVC.swift
+//  PageCollectionVC2.swift
 //  PageScrollViewDemo
 //
-//  Created by Kaibo Lu on 2017/3/8.
+//  Created by Kaibo Lu on 2017/3/9.
 //  Copyright © 2017年 Kaibo Lu. All rights reserved.
 //
 
 import UIKit
 
-class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class PageCollectionVC2: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    private var selectedIndex: Int = 0
-    private let cellWidth: CGFloat = UIScreen.main.bounds.width - 100
+    private let cellWidth: CGFloat = 100
     private let cellHeight: CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = .white
         
@@ -30,12 +29,13 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.decelerationRate = UIScrollViewDecelerationRateFast
         view.addSubview(collectionView)
     }
     
     // MARK: - Collection view data source
     
-    private let numberOfItems: Int = 6
+    private let numberOfItems: Int = 30
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -65,7 +65,9 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.item {
         case numberOfItems:
-            return CGSize(width: UIScreen.main.bounds.width - cellWidth, height: cellHeight)
+            let n = Int(UIScreen.main.bounds.width / cellWidth)
+            let d = UIScreen.main.bounds.width - cellWidth * CGFloat(n)
+            return CGSize(width: d, height: cellHeight)
         default:
             return CGSize(width: cellWidth, height: cellHeight)
         }
@@ -76,20 +78,12 @@ class PageCollectionVC: UIViewController, UICollectionViewDataSource, UICollecti
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         let pageWidth = cellWidth
-        let movedX = x - pageWidth * CGFloat(selectedIndex)
-        if movedX < -pageWidth * 0.5 {
-            // Move left
-            selectedIndex -= 1
-        } else if movedX > pageWidth * 0.5 {
-            // Move right
-            selectedIndex += 1
+        var index = Int(x / pageWidth)
+        let divideX = CGFloat(index) * pageWidth + pageWidth * 0.5
+        if x > divideX {
+            index += 1
         }
-        if abs(velocity.x) >= 2 {
-            targetContentOffset.pointee.x = pageWidth * CGFloat(selectedIndex)
-        } else {
-            targetContentOffset.pointee.x = scrollView.contentOffset.x
-            scrollView.setContentOffset(CGPoint(x: pageWidth * CGFloat(selectedIndex), y: scrollView.contentOffset.y), animated: true)
-        }
+        targetContentOffset.pointee.x = pageWidth * CGFloat(index)
     }
 
 }

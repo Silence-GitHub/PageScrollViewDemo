@@ -15,6 +15,7 @@
 		4AB43CA81E6E9B5900FAA3CB /* PageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB43CA71E6E9B5900FAA3CB /* PageScrollView.swift */; };
 		4AFDF5C71E7024E3004979D9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFDF5C61E7024E3004979D9 /* TableViewController.swift */; };
 		4AFDF5C91E70263D004979D9 /* PageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */; };
+		4AFDF5CD1E710A27004979D9 /* PageCollectionVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFDF5CC1E710A27004979D9 /* PageCollectionVC2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4AB43CA71E6E9B5900FAA3CB /* PageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageScrollView.swift; sourceTree = "<group>"; };
 		4AFDF5C61E7024E3004979D9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionVC.swift; sourceTree = "<group>"; };
+		4AFDF5CC1E710A27004979D9 /* PageCollectionVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionVC2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				4AFDF5C61E7024E3004979D9 /* TableViewController.swift */,
 				4AB43C971E6E9AEA00FAA3CB /* PageScrollVC.swift */,
 				4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */,
+				4AFDF5CC1E710A27004979D9 /* PageCollectionVC2.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				4AB43C981E6E9AEA00FAA3CB /* PageScrollVC.swift in Sources */,
 				4AB43CA81E6E9B5900FAA3CB /* PageScrollView.swift in Sources */,
+				4AFDF5CD1E710A27004979D9 /* PageCollectionVC2.swift in Sources */,
 				4AB43C961E6E9AEA00FAA3CB /* AppDelegate.swift in Sources */,
 				4AFDF5C71E7024E3004979D9 /* TableViewController.swift in Sources */,
 				4AFDF5C91E70263D004979D9 /* PageCollectionVC.swift in Sources */,
