@@ -13,6 +13,7 @@
 		4AB43C9D1E6E9AEA00FAA3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AB43C9C1E6E9AEA00FAA3CB /* Assets.xcassets */; };
 		4AB43CA01E6E9AEA00FAA3CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB43C9E1E6E9AEA00FAA3CB /* LaunchScreen.storyboard */; };
 		4AB43CA81E6E9B5900FAA3CB /* PageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB43CA71E6E9B5900FAA3CB /* PageScrollView.swift */; };
+		4AF93D6A1E717B3300320599 /* PageCollectionVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF93D691E717B3300320599 /* PageCollectionVC3.swift */; };
 		4AFDF5C71E7024E3004979D9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFDF5C61E7024E3004979D9 /* TableViewController.swift */; };
 		4AFDF5C91E70263D004979D9 /* PageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */; };
 		4AFDF5CD1E710A27004979D9 /* PageCollectionVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFDF5CC1E710A27004979D9 /* PageCollectionVC2.swift */; };
@@ -27,6 +28,7 @@
 		4AB43C9F1E6E9AEA00FAA3CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AB43CA11E6E9AEA00FAA3CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AB43CA71E6E9B5900FAA3CB /* PageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageScrollView.swift; sourceTree = "<group>"; };
+		4AF93D691E717B3300320599 /* PageCollectionVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionVC3.swift; sourceTree = "<group>"; };
 		4AFDF5C61E7024E3004979D9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionVC.swift; sourceTree = "<group>"; };
 		4AFDF5CC1E710A27004979D9 /* PageCollectionVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionVC2.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				4AB43C971E6E9AEA00FAA3CB /* PageScrollVC.swift */,
 				4AFDF5C81E70263D004979D9 /* PageCollectionVC.swift */,
 				4AFDF5CC1E710A27004979D9 /* PageCollectionVC2.swift */,
+				4AF93D691E717B3300320599 /* PageCollectionVC3.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				4AB43C981E6E9AEA00FAA3CB /* PageScrollVC.swift in Sources */,
 				4AB43CA81E6E9B5900FAA3CB /* PageScrollView.swift in Sources */,
 				4AFDF5CD1E710A27004979D9 /* PageCollectionVC2.swift in Sources */,
+				4AF93D6A1E717B3300320599 /* PageCollectionVC3.swift in Sources */,
 				4AB43C961E6E9AEA00FAA3CB /* AppDelegate.swift in Sources */,
 				4AFDF5C71E7024E3004979D9 /* TableViewController.swift in Sources */,
 				4AFDF5C91E70263D004979D9 /* PageCollectionVC.swift in Sources */,

@@ -14,13 +14,15 @@ class TableViewController: UITableViewController {
 
     private let titles: [String] = ["Page scroll view",
                                     "Page collection view long",
-                                    "Page collection view short"]
+                                    "Page collection view short",
+                                    "Page collection + scroll view"]
     
     private var vcs: [UIViewController] {
         get {
             return [PageScrollVC(),
                     PageCollectionVC(),
-                    PageCollectionVC2()]
+                    PageCollectionVC2(),
+                    PageCollectionVC3()]
         }
     }
     
