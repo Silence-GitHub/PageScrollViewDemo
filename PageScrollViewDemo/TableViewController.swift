@@ -11,40 +11,37 @@ import UIKit
 class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
-
-    private let titles: [String] = ["Page scroll view",
-                                    "Page collection view long",
-                                    "Page collection view short",
-                                    "Page collection + scroll view"]
     
-    private var vcs: [UIViewController] {
+    private var vcs: [[String : String]] {
         get {
-            return [PageScrollVC(),
-                    PageCollectionVC(),
-                    PageCollectionVC2(),
-                    PageCollectionVC3()]
+            return [["title" : "Page scroll view", "vc" : "PageScrollVC"],
+                    ["title" : "Page collection view long", "vc" : "PageCollectionVC"],
+                    ["title" : "Page collection view short", "vc" : "PageCollectionVC2"],
+                    ["title" : "Page collection + scroll view", "vc" : "PageCollectionVC3"]]
         }
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return vcs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = titles[indexPath.row]
+        cell.textLabel?.text = vcs[indexPath.row]["title"]
         return cell
     }
     
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(vcs[indexPath.row], animated: true)
-        
+        let clazz = classFrom(vcs[indexPath.row]["vc"]!) as! UIViewController.Type
+        navigationController?.pushViewController(clazz.init(), animated: true)
     }
-
+    
+    func classFrom(_ string: String) -> AnyClass? {
+        if let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {
+            return NSClassFromString("\(name).\(string)")
+        }
+        return NSClassFromString(string)
+    }
 }
